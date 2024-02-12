@@ -113,4 +113,21 @@
     padding: 0 !important;
     border-left: none !important;
 }
+.gjs-am-assets-cont {
+    height: 334px !important;
+}
+.gjs-am-add-asset button {
+    width: 100% !important;
+    margin-top: 15px;
+    background: #1d1e20;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.gjs-am-add-asset .gjs-am-add-field {
+    width: 100% !important;
+}
+.gjs-am-assets-cont {
+    background: #fff !important;
+}
 
