@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import grapesjs from 'grapesjs';
 import 'grapesjs/dist/css/grapes.min.css';
 import plugin from 'grapesjs-preset-newsletter';
-
+import '../public/assets/css/custom_builder.css'
 
 export default function Home() {
   const editorRef = useRef(null);
@@ -629,8 +629,15 @@ export default function Home() {
   </div>
 `;
 
+
+console.log(editor);
+
 // Load the template into the editor
 editor.setComponents(templateContent);  
+
+  // Save the editor instance to the ref
+  editorRef.current = editor;
+
   
     // Cleanup on component unmount
     return () => {
@@ -639,20 +646,18 @@ editor.setComponents(templateContent);
   }, []); // Empty dependency array ensures useEffect runs only once after initial render
 
 
+  
   const getHtmlContent = () => {
-    const editor = editorRef.current;
+   const editor = editorRef.current;
 
-    if (editor) {
-      // Get the HTML content
-      const htmlContent = editor.getHtml();
+   if (editor) {
+     // Get the HTML content
+     const htmlContent = editor.getHtml();
 
-      // Log or use the HTML content as needed
-      console.log(htmlContent);
-    }
-  };
-
-
-
+     // Log or use the HTML content as needed
+     console.log(htmlContent);
+   }
+ };
 
   return (<><div id="gjs" ></div> <button onClick={getHtmlContent}>Save HTML and CSS</button></>
   );
